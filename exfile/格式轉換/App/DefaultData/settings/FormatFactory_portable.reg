@@ -1,0 +1,7 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\FormatFactory\FormatFactory]
+"OutputDir"="C:\\Documents"
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory]
+"OutputDir"="C:\\Documents"

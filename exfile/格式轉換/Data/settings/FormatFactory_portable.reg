@@ -1,0 +1,114 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\FormatFactory]
+
+[HKEY_CURRENT_USER\Software\FormatFactory\FormatFactory]
+"OutputDir"="C:\\Documents"
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory]
+"Version"="3.3.5"
+"OutputDir"="C:\\Users\\ÂE©ú\\Desktop"
+"CodecInstalled"=dword:00000000
+"UseCount"=dword:00000007
+"Skin"=dword:00000001
+"LastCheckUpdate"=hex(b):69,aa,86,56,00,00,00,00
+"LastUse"="2016-01-04"
+"QueryPeriod"=dword:00000048
+"DailyUseStat"="http://www.pcfreetime.com/update/daily_stat.html"
+"FirstUseStat"="http://www.pcfreetime.com/update/inst_stat.html"
+"SoundGeneOpt"=dword:00000000
+"SoundErrorNotify"=dword:00000001
+"SoundCompleteNotify"=dword:00000001
+"OpenOutputDir"=dword:00000000
+"AppendCfgName"=dword:00000000
+"OutputToSrcFolder"=dword:00000000
+"MiniSysTray"=dword:00000000
+"CheckNewVersion"=dword:00000001
+"OptionActivePage"=dword:00000000
+"StartMethodTab"=dword:00000002
+"AcceptFileOutputToSrcFolder"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> 3GP]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> AAC]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> AMR]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> APE]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> AVI]
+"ProfileIndex"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> BMP]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> FLAC]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> FLV]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> GIF]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> ICO]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> JPG]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> M4A]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> M4R]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MKV]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MMF]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> Mobile Device]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MOV]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MP2]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MP3]
+"ProfileIndex"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MP4]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> MPG]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> OGG]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> PCX]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> PNG]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> RMVB]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> SWF]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> TGA]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> TIF]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> VOB]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> WAV]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> WMA]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\-> WMV]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\Audio Joiner]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\DVD to Video File]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\Music CD to Audio File]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\Mux]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\Rename]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\TextShow]
+"Text1"="Picosmos Picture Tools"
+"URL1"="http://www.picosmos.net"
+"TextLang"="Chinese-Traditional"
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\Video Joiner]
+
+[HKEY_CURRENT_USER\Software\FreeTime\FormatFactory\WavPack]
