@@ -34,6 +34,7 @@ public class Home extends JFrame {
 	private JTextField school;
 	private JRadioButton sex_b;
 	private JRadioButton sex_g;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -60,7 +61,7 @@ public class Home extends JFrame {
 		File ans = new File("exfile\\ans.txt");
 		if (!(ans.exists()))
         {
-			final JFrame er = new JFrame("找不到解答檔案！程式將自動關閉");
+			final JFrame er = new JFrame("找不到解答檔案！程式將自動關閉！");
 			er.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			er.setLocationRelativeTo(null);
 			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -92,19 +93,32 @@ public class Home extends JFrame {
 			JLabel label = new JLabel("姓名 : ");
 			label.setFont(new Font("標楷體", Font.BOLD, 18));
 			label.setForeground(new Color(0, 0, 0));
-			label.setBounds(473, 544, 92, 32);
+			label.setBounds(473, 575, 92, 32);
 			contentPane.add(label);
+			
+			JLabel label_3 = new JLabel("\u73ED\u7D1A : ");
+			label_3.setForeground(Color.BLACK);
+			label_3.setFont(new Font("標楷體", Font.BOLD, 18));
+			label_3.setBounds(473, 533, 92, 32);
+			contentPane.add(label_3);
 			
 			textField = new JTextField();
 			textField.setFont(new Font("標楷體", Font.PLAIN, 18));
-			textField.setBounds(565, 546, 179, 29);
+			textField.setBounds(565, 577, 179, 29);
 			contentPane.add(textField);
 			textField.setColumns(10);
 			
+			textField_1 = new JTextField();
+			textField_1.setFont(new Font("標楷體", Font.PLAIN, 18));
+			textField_1.setColumns(10);
+			textField_1.setBounds(565, 535, 179, 29);
+			contentPane.add(textField_1);
+						
 			JButton btnStart = new JButton("Start");
 			btnStart.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Main.student_name = textField.getText();
+					Main.student_class = textField_1.getText();
 					Main.school_name = school.getText();
 					if(sex_b.isSelected())
 					{
@@ -123,9 +137,9 @@ public class Home extends JFrame {
 				}
 			});
 			btnStart.setFont(new Font("Tahoma", Font.PLAIN, 18));
-			btnStart.setBounds(802, 598, 87, 23);
+			btnStart.setBounds(802, 621, 87, 23);
 			contentPane.add(btnStart);
-			
+						
 			school = new JTextField();
 			school.setFont(new Font("標楷體", Font.PLAIN, 18));
 			school.setBounds(565, 491, 324, 32);
@@ -141,15 +155,15 @@ public class Home extends JFrame {
 			JLabel label_2 = new JLabel("\u6027\u5225 : ");
 			label_2.setForeground(new Color(0, 0, 0));
 			label_2.setFont(new Font("標楷體", Font.BOLD, 18));
-			label_2.setBounds(473, 594, 92, 32);
+			label_2.setBounds(473, 617, 92, 32);
 			contentPane.add(label_2);
 			
 			sex_b = new JRadioButton("\u7537");
-			sex_b.setBounds(565, 601, 75, 23);
+			sex_b.setBounds(565, 624, 75, 23);
 			contentPane.add(sex_b);
 			
 			sex_g = new JRadioButton("\u5973");
-			sex_g.setBounds(669, 601, 75, 23);
+			sex_g.setBounds(669, 624, 75, 23);
 			contentPane.add(sex_g);
 			
 			ButtonGroup sex = new ButtonGroup();
@@ -166,7 +180,7 @@ public class Home extends JFrame {
 			
 			JPanel panel = new JPanel();
 			panel.setBackground(new Color(100, 149, 237));
-			panel.setBounds(461, 478, 447, 159);
+			panel.setBounds(460, 465, 447, 208);
 			contentPane.add(panel);
 			contentPane.add(back);
 			contentPane.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{back, label, textField, btnStart, school, label_1, label_2, sex_b, sex_g}));

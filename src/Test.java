@@ -73,11 +73,12 @@ public class Test extends JFrame {
 				
 				final Test frame = new Test();
 				frame.setVisible(true);
+				frame.setAlwaysOnTop(true);
 				
 				JButton button_A = new JButton("");
 				button_A.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						Main.student_ans_a[Test.quittint-1] = "A";
+						Main.student_ans_a[Test.quittint-1] = " A";
 						Test.endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime; 
 						Main.i++;
@@ -89,6 +90,7 @@ public class Test extends JFrame {
 						{
 							try {
 								Main.output_reslut();
+								End.main();
 							} catch (IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -108,7 +110,7 @@ public class Test extends JFrame {
 				JButton button_B = new JButton("");
 				button_B.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						Main.student_ans_a[Test.quittint-1] = "B";
+						Main.student_ans_a[Test.quittint-1] = " B";
 						endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime;
 						Main.i++;
@@ -120,6 +122,7 @@ public class Test extends JFrame {
 						{
 							try {
 								Main.output_reslut();
+								End.main();
 							} catch (IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -139,7 +142,7 @@ public class Test extends JFrame {
 				JButton button_C = new JButton("");
 				button_C.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						Main.student_ans_a[Test.quittint-1] = "C";
+						Main.student_ans_a[Test.quittint-1] = " C";
 						endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime;
 						Main.i++;
@@ -151,6 +154,7 @@ public class Test extends JFrame {
 						{
 							try {
 								Main.output_reslut();
+								End.main();
 							} catch (IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -186,7 +190,7 @@ public class Test extends JFrame {
 				}
 				
 				try {
-					Thread.sleep((int)(Test.quit_long/210)); 
+					Thread.sleep((int)(Test.quit_long/202)); 
 				} catch (InterruptedException e) {
 				}
 				button_A.setVisible(true);
@@ -215,7 +219,7 @@ public class Test extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-			
+					
 		JLabel label = new JLabel("第      題");
 		label.setFont(new Font("標楷體", Font.BOLD, 28));
 		label.setBounds(42, 51, 253, 46);
