@@ -40,6 +40,10 @@ public class Test extends JFrame {
 	static long startTime;
 	static long endTime;
 	
+	static Clip quitplayer_again;
+	static AudioInputStream quitaudio_again;
+	static DataLine.Info quitinfo;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -82,9 +86,21 @@ public class Test extends JFrame {
 						Test.endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime; 
 						Main.i++;
+						try {
+							quitplayer_again.stop();
+						} catch (NullPointerException e){
+							
+						}
 						if(Main.i<Main.do_test.length)
 						{
-							Main.do_test[Main.i].start();
+							if(Main.need_wait)
+							{
+								Wait.main();
+							}
+							else
+							{
+								Main.do_test[Main.i].start();
+							}
 						}
 						else
 						{
@@ -114,9 +130,21 @@ public class Test extends JFrame {
 						endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime;
 						Main.i++;
+						try {
+							quitplayer_again.stop();
+						} catch (NullPointerException e){
+							
+						}
 						if(Main.i<Main.do_test.length)
 						{
-							Main.do_test[Main.i].start();
+							if(Main.need_wait)
+							{
+								Wait.main();
+							}
+							else
+							{
+								Main.do_test[Main.i].start();
+							}
 						}
 						else
 						{
@@ -146,9 +174,21 @@ public class Test extends JFrame {
 						endTime = System.currentTimeMillis();
 						Main.student_taketime_a[Test.quittint-1] = Test.endTime - Test.startTime;
 						Main.i++;
+						try {
+							quitplayer_again.stop();
+						} catch (NullPointerException e){
+							
+						}
 						if(Main.i<Main.do_test.length)
 						{
-							Main.do_test[Main.i].start();
+							if(Main.need_wait)
+							{
+								Wait.main();
+							}
+							else
+							{
+								Main.do_test[Main.i].start();
+							}
 						}
 						else
 						{
@@ -170,6 +210,32 @@ public class Test extends JFrame {
 				button_C.setIcon(icon_C);
 				button_C.setVisible(false);
 				frame.getContentPane().add(button_C);
+				
+				JButton listen_again = new JButton("再聽一次");
+				File quitfile_again = new File(Test.quit);
+				try {
+					quitaudio_again = AudioSystem.getAudioInputStream(quitfile_again);
+					quitinfo = new DataLine.Info(Clip.class, quitaudio_again.getFormat());
+					quitplayer_again = (Clip)AudioSystem.getLine(quitinfo);
+					quitplayer_again.open(quitaudio_again);
+				} catch (UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (LineUnavailableException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				listen_again.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						quitplayer_again.loop(1);
+					}
+				});
+				listen_again.setBounds(10, 680, 150, 50);
+				listen_again.setVisible(false);
+				frame.getContentPane().add(listen_again);
 				
 				File quitfile = new File(Test.quit);
 				try {
@@ -196,6 +262,7 @@ public class Test extends JFrame {
 				button_A.setVisible(true);
 				button_B.setVisible(true);
 				button_C.setVisible(true);
+				listen_again.setVisible(true);
 				
 				startTime = System.currentTimeMillis();
 				

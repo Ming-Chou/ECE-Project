@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 import java.awt.Window.Type;
+import javax.swing.JCheckBox;
 
 
 public class Main extends JFrame {
@@ -49,6 +50,7 @@ public class Main extends JFrame {
     static String[] student_ans_a;
     static long[] student_taketime_a;
     static String[] quit;
+    static boolean need_wait;
 
 	/**
 	 * Launch the application.
@@ -324,5 +326,4 @@ public class Main extends JFrame {
 		});
 		contentPane.add(btnStart);
 	}
-
 }

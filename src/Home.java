@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -35,6 +36,7 @@ public class Home extends JFrame {
 	private JRadioButton sex_b;
 	private JRadioButton sex_g;
 	private JTextField textField_1;
+	private JCheckBox need_wait_chk;
 
 	/**
 	 * Launch the application.
@@ -128,6 +130,10 @@ public class Home extends JFrame {
 					{
 						Main.student_sex = "女";
 					}
+					if(need_wait_chk.isSelected())
+					{
+						Main.need_wait = true;
+					}
 					new Thread(new Runnable(){
 	        			public void run() {
 	        				Main.main();
@@ -165,6 +171,10 @@ public class Home extends JFrame {
 			sex_g = new JRadioButton("\u5973");
 			sex_g.setBounds(669, 624, 75, 23);
 			contentPane.add(sex_g);
+			
+			need_wait_chk = new JCheckBox("題目間是否需要等待");
+			need_wait_chk.setBounds(802, 650, 150, 23);
+			contentPane.add(need_wait_chk);
 			
 			ButtonGroup sex = new ButtonGroup();
 			sex.add(sex_b);
