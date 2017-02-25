@@ -51,6 +51,7 @@ public class Main extends JFrame {
     static long[] student_taketime_a;
     static String[] quit;
     static boolean need_wait;
+    static boolean ran_quit;
 
 	/**
 	 * Launch the application.
@@ -266,27 +267,55 @@ public class Main extends JFrame {
             	load();
             }
             
-            while(Main.quit_start_to<=Main.quit_amount)
-            {
-    			Main.quittint = ran.nextInt(Main.quit_amount);
-                while(quit_show[Main.quittint]==1)
-                {
-                	Main.quittint = ran.nextInt(Main.quit_amount);
-                }
-                
-                Main.quit_start_to_a[Main.quit_start_to-1] = Main.quit_start_to;
-                Main.quittint_a[Main.quit_start_to-1] = Main.quittint+1;
-                Main.quit_long_a[Main.quit_start_to-1] = file[Main.quittint].length();
-                
-				do_test[Main.quit_start_to-1] = new Thread(new Runnable(){
-					public void run() {
-						Test.main();
-					}
-				});
-								
-                quit_show[Main.quittint] = 1;
-                Main.quit_start_to++;          	
-            }
+            if(ran_quit==true)
+    		{
+    			while(Main.quit_start_to<=Main.quit_amount)
+    	        {
+    	 			Main.quittint = ran.nextInt(Main.quit_amount);
+    	             
+    				while(quit_show[Main.quittint]==1)
+    	            {
+    	             	Main.quittint = ran.nextInt(Main.quit_amount);
+    	            }
+    	             
+    	            Main.quit_start_to_a[Main.quit_start_to-1] = Main.quit_start_to;
+    	            Main.quittint_a[Main.quit_start_to-1] = Main.quittint+1;
+    	            Main.quit_long_a[Main.quit_start_to-1] = file[Main.quittint].length();
+    	             
+    					do_test[Main.quit_start_to-1] = new Thread(new Runnable(){
+    						public void run() {
+    							Test.main();
+    						}
+    					});
+    									
+    	             quit_show[Main.quittint] = 1;
+    	             Main.quit_start_to++;          	
+    	        }
+    		}
+    		else
+    		{
+    			Main.quittint = 0;
+    			while(Main.quit_start_to<=Main.quit_amount)
+    			{
+    				while(quit_show[Main.quittint]==1)
+    				{
+    					Main.quittint++;
+    				}
+    				
+    				Main.quit_start_to_a[Main.quit_start_to-1] = Main.quit_start_to;
+    	            Main.quittint_a[Main.quit_start_to-1] = Main.quittint+1;
+    	            Main.quit_long_a[Main.quit_start_to-1] = file[Main.quittint].length();
+    	             
+    					do_test[Main.quit_start_to-1] = new Thread(new Runnable(){
+    						public void run() {
+    							Test.main();
+    						}
+    					});
+    									
+    	             quit_show[Main.quittint] = 1;
+    	             Main.quit_start_to++;  
+    			}
+    		}
             
             do_test[Main.i].start();
 		} catch (Exception e) {
