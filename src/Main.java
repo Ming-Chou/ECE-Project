@@ -25,7 +25,25 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 import java.awt.Window.Type;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+
+import javax.swing.JCheckBox;
+
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+
+import java.awt.Component;
+import java.awt.SystemColor;
 
 
 public class Main extends JFrame {
@@ -190,14 +208,18 @@ public class Main extends JFrame {
 			
 			final Random ran = new Random();
 			
-			File[] file = new File[150];
-			for (int i=0; i < 50; i++)
+			File[] file = new File[500];
+			for (int i=0; i < file.length; i++)
             {
 				file[i] = new File("exfile\\q" + (i+1) + ".wav");  
                 if (!(file[i].exists()))
                 {
                 	Main.quit_amount = i;
                     break;
+                }
+                if (i==file.length-1 && (file[i].exists()))
+                {
+                	Main.quit_amount = i+1;
                 }
             }
 			
@@ -216,6 +238,7 @@ public class Main extends JFrame {
 			quit_ans = new String[Main.quit_amount];
             int c = 0;
             File ans = new File("exfile\\ans.txt");
+            int temp_c = 0;
             if (ans.exists())
             {
             	Scanner anssc = new Scanner(ans);
@@ -223,6 +246,7 @@ public class Main extends JFrame {
                 {
                     quit_ans[c] = " " + anssc.nextLine();
                     c++;
+                    temp_c++;
                 }
                 anssc.close();
             }
@@ -246,6 +270,25 @@ public class Main extends JFrame {
 					Thread.sleep(Integer.MAX_VALUE); 
 				} catch (InterruptedException e) {
 				}
+            }
+            if(temp_c!=Main.quit_amount)
+            {
+            	final JFrame er = new JFrame("答檔數量與題目數量不相符！程式將自動關閉！");
+    			er.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    			er.setLocationRelativeTo(null);
+    			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    			er.setVisible(true);
+    			er.setResizable(false);
+    			Image icon = Toolkit.getDefaultToolkit().getImage("exfile\\usr\\icon.gif");
+    			er.setIconImage(icon);
+    			JButton BEnd2 = new JButton("確定");
+    			BEnd2.addActionListener(new ActionListener() {
+    				public void actionPerformed(ActionEvent arg0) {
+    					er.dispose();
+    					System.exit(0);
+    				}
+    			});
+    			er.getContentPane().add(BEnd2);
             }
             
             student_ans_a = new String[Main.quit_amount];
